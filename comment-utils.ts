@@ -94,6 +94,32 @@ export const getCommentString: ({
               }
             ]
           },
+          ...(pullRequestLink !== ""
+            ? [
+                {
+                  type: "paragraph",
+                  content: [
+                    {
+                      type: "text",
+                      text: "Pull Request link "
+                    },
+                    {
+                      type: "text",
+                      text: pullRequestLink,
+                      marks: [
+                        {
+                          type: "link",
+                          attrs: {
+                            href: pullRequestLink,
+                            title: "PR link"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            : []),
           {
             type: "paragraph",
             content: [
